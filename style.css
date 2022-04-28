@@ -7,7 +7,7 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(125px, 1fr));
     min-height: 100vh;
     grid-template-areas: 
     'dashboard header header header'
@@ -22,30 +22,109 @@
     color: white;
     font-weight: 900;
     font-size: 1.6rem;
-
 }
 
 .dashboard-header {
     margin: 50px 0 50px 30px;
+    font-size: 1.8rem;
 }
 
 .dash-main {
     margin: 50px 0 50px 30px;
-    display: flex;
-    flex-flow: column;
+    display: grid;
     gap: 12px 0;
 }
 
 .dash-settings {
     margin: 0 0 0 30px;
-    display: flex;
-    flex-flow: column;
+    display: grid;
     gap: 12px 0;
 }
 
 .main-header {
     border: 2px solid hotpink;
     grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(9, minmax(100px, 1fr));
+    grid-template-areas: 
+    'search search search search search search bell account account'
+    'avatar greet  greet  greet   .      .     new  upload  share';
+    padding: 1rem 1rem 0 1rem;
+}
+
+.search {
+    grid-area: search;
+    display: flex;
+    gap: 5px;
+}
+
+#search-bar {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 500px;
+    height: fit-content;
+    background-color: rgb(235,235,235);
+    border: none;
+    display: flex;
+    flex: 1;
+}
+
+.bell {
+    grid-area: bell;
+    margin-left: 20px;
+}
+
+.account {
+    grid-area: account;
+    display: flex;
+    gap: 5px;
+}
+
+.account-name {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.avatar {
+    grid-area: avatar;
+}
+
+.greeting {
+    grid-area: greet;
+}
+
+.greet {
+    font-weight: 800;
+    font-size: .9rem;
+}
+
+.greet-name {
+    font-weight: 900;
+    font-size: 1.6rem;
+}
+
+.new, .upload, .share {
+    background-color: #06b6d4;
+    color: white;
+    border-radius: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: .75rem;
+    margin: 0 .25rem;
+}
+
+.new {
+    grid-area: new;
+}
+
+.upload {
+    grid-area: upload;
+}
+
+.share {
+    grid-area: share;
 }
 
 .main-cards {

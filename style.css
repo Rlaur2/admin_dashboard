@@ -5,6 +5,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+body {
+    background-color: rgb(235,235,235);
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(4, minmax(125px, 1fr));
@@ -63,7 +67,7 @@
 }
 
 .main-header {
-    border: 2px solid hotpink;
+    background-color: white;
     grid-area: header;
     display: grid;
     grid-template-columns: repeat(9, minmax(100px, 1fr));
@@ -71,12 +75,20 @@
     'search search search search search search bell account account'
     'avatar greet  greet  greet   .      .     new  upload  share';
     padding: 1rem 1rem 0 1rem;
+    margin-bottom: 3rem;
 }
 
 .search {
     grid-area: search;
     display: flex;
     gap: 5px;
+    align-items: center;
+}
+
+.magny-glass img {
+    height: 26px;
+    width: 26px;
+    margin-top: 10px;
 }
 
 #search-bar {
@@ -87,18 +99,35 @@
     background-color: rgb(235,235,235);
     border: none;
     display: flex;
-    flex: 1;
+    flex: 1 1 0;
 }
 
 .bell {
     grid-area: bell;
     margin-left: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+.bell img {
+    height: 26px;
+    width: 26px;
+    margin-right: 10px;
+}
+
 
 .account {
     grid-area: account;
     display: flex;
-    gap: 5px;
+    gap: 15px;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.account-img img {
+    height: 60px;
+    width: 60px;
 }
 
 .account-name {
@@ -108,10 +137,22 @@
 
 .avatar {
     grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    height: 90px;
+    width: 90px;
 }
 
 .greeting {
     grid-area: greet;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    gap: 10px;
 }
 
 .greet {
@@ -133,7 +174,7 @@
     align-items: center;
     height: fit-content;
     padding: .75rem;
-    margin: 0 .25rem;
+    margin: 3.5rem .25rem 0;
 }
 
 .new {

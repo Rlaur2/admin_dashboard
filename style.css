@@ -11,7 +11,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(125px, 1fr));
+    grid-template-columns: auto auto auto 20vw;
     min-height: 100vh;
     grid-template-areas: 
     'dashboard header header header'
@@ -24,6 +24,7 @@ body {
 .dashboard {
     grid-area: dashboard;
     background-color: #06b6d4;
+    padding: 1rem;
     color: white;
     font-weight: 900;
     font-size: 1.6rem;
